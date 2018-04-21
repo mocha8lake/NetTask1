@@ -8,9 +8,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>hello</title>
+    <title>小窗口</title>
   </head>
   <body>
-  Hello Blake!
+    <center>
+        <form action="<%=request.getContextPath()%>/html" method="POST">
+            <input type="submit" value="提交">
+        </form>
+    </center>
   </body>
 </html>
