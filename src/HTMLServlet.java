@@ -17,7 +17,23 @@ public class HTMLServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException,
             IOException {
-        this.doPost(req,resp);
+        resp.setCharacterEncoding("UTF-8");
+        resp.setContentType("text/html");
+
+        PrintWriter out = resp.getWriter();
+
+        out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n"
+                +"<HTML>\n"
+                +"  <HEAD><TITLE>GET</TITLE></HEAD>\n"
+                +"  <BODY>\n"
+                +"    <table border='0' align='center'>\n"
+                +"            <tr><td>you have just done a GET</td></tr>\n"
+                +"     </table>\n"
+                +"  </BODY>\n"
+                +"</HTML>");
+
+        out.flush();
+        out.close();
     }
 
     @Override
@@ -30,13 +46,14 @@ public class HTMLServlet extends HttpServlet{
 
         out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
         out.println("<HTML>");
-        out.println("  <HEAD><TITLE>动态生成的HTML文档</TITLE></HEAD>");
+        out.println("  <HEAD><TITLE>POST</TITLE></HEAD>");
         out.println("  <BODY>");
         out.println("    <table border='0' align='center'>");
-        out.println("            <tr><td bgcolor='skyblue'colspan=2>动态生成HTML文档</td></tr>");
+        out.println("            <tr><td>you have just done a POST</td></tr>");
         out.println("     </table>");
         out.println("  </BODY>");
         out.println("</HTML>");
+
         out.flush();
         out.close();
     }
@@ -45,4 +62,6 @@ public class HTMLServlet extends HttpServlet{
     public void destroy(){
         super.destroy();
     }
+
+
 }

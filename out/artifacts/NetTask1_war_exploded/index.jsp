@@ -8,12 +8,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>小窗口</title>
+    <title>main</title>
   </head>
   <body>
     <center>
+        <form action="<%=request.getContextPath()%>/html" method="GET">
+            <input type="button" value="GET">
+        </form>
         <form action="<%=request.getContextPath()%>/html" method="POST">
-            <input type="submit" value="提交">
+            <input type="submit" value="POST">
         </form>
     </center>
   </body>
