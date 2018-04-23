@@ -13,7 +13,7 @@
   <body>
     <center>
         <form action="<%=request.getContextPath()%>/html" method="GET">
-            <input type="button" value="GET">
+            <input type="submit" value="GET">
         </form>
         <form action="<%=request.getContextPath()%>/html" method="POST">
             <input type="submit" value="POST">
